@@ -1,3 +1,4 @@
+"use client";
 import {
   Table,
   TableBody,
@@ -8,15 +9,16 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import { Button } from "./ui/button";
-import { Pin, Trash } from "lucide-react";
+
 import { ITodo } from "../interfaces/index";
 import { Badge } from "./ui/badge";
+
+import TodoActions from "./TodoActions";
 
 export default function TodoTable({ todos }: { todos: ITodo[] }) {
   return (
     <Table>
-      <TableCaption>A list of your recent invoices.</TableCaption>
+      <TableCaption>A list of your Todos.</TableCaption>
       <TableHeader>
         <TableRow>
           <TableHead className="w-[100px]">ID</TableHead>
@@ -26,24 +28,21 @@ export default function TodoTable({ todos }: { todos: ITodo[] }) {
         </TableRow>
       </TableHeader>
       <TableBody>
-        {todos.map((todo) => (
+        {todos?.map((todo) => (
           <TableRow key={todo.id}>
             <TableCell className="font-medium">{todo.id}</TableCell>
             <TableCell>{todo.title}</TableCell>
             <TableCell>
               {todo.completed ? (
-                <Badge>Completed</Badge>
+                <Badge className="w-28 block text-center">Completed</Badge>
               ) : (
-                <Badge variant={"secondary"}>UnCompleted</Badge>
+                <Badge className="w-28 block text-center" variant={"secondary"}>
+                  UnCompleted
+                </Badge>
               )}
             </TableCell>
             <TableCell className="text-right space-x-2">
-              <Button size={"icon"}>
-                <Pin size={16} />
-              </Button>
-              <Button size={"icon"} variant={"destructive"}>
-                <Trash size={16} />
-              </Button>
+              <TodoActions todo={todo} />
             </TableCell>
           </TableRow>
         ))}
@@ -51,7 +50,9 @@ export default function TodoTable({ todos }: { todos: ITodo[] }) {
       <TableFooter>
         <TableRow>
           <TableCell colSpan={3}>Total</TableCell>
-          <TableCell className="text-right">$2,500.00</TableCell>
+          <TableCell className="text-right">
+            {todos.length ? todos.length : "You Not Have Todos"}
+          </TableCell>
         </TableRow>
       </TableFooter>
     </Table>

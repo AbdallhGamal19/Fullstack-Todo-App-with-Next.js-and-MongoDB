@@ -18,8 +18,3 @@ export const todoFormSchema = z.object({
   completed: z.boolean(),
 });
 export type todoFormValues = z.infer<typeof todoFormSchema>;
-export const todoDefaultValues: Partial<todoFormValues> = {
-  title: "",
-  body: "",
-  completed: false,
-};
