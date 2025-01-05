@@ -3,7 +3,7 @@ import { ModeToggle } from "./ui/ModeToggle";
 
 const Nav = () => {
   return (
-    <div className="container m-auto my-6 flex items-center justify-between">
+    <div className="container m-auto my-6 flex items-center justify-between p-2">
       <ModeToggle />
       <SignedOut>
         <SignInButton />

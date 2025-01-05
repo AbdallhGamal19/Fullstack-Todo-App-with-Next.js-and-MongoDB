@@ -18,7 +18,7 @@ import TodoActions from "./TodoActions";
 export default function TodoTable({ todos }: { todos: ITodo[] }) {
   return (
     <Table>
-      <TableCaption>A list of your Todos.</TableCaption>
+      <TableCaption className="mb-5">A list of your Todos.</TableCaption>
       <TableHeader>
         <TableRow>
           <TableHead className="w-[100px]">ID</TableHead>
@@ -28,9 +28,9 @@ export default function TodoTable({ todos }: { todos: ITodo[] }) {
         </TableRow>
       </TableHeader>
       <TableBody>
-        {todos?.map((todo) => (
+        {todos?.map((todo, idx) => (
           <TableRow key={todo.id}>
-            <TableCell className="font-medium">{todo.id}</TableCell>
+            <TableCell className="font-medium">{idx + 1}</TableCell>
             <TableCell>{todo.title}</TableCell>
             <TableCell>
               {todo.completed ? (
