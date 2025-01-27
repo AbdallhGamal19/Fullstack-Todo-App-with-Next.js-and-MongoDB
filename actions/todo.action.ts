@@ -25,10 +25,16 @@ export const getUserTodoListActions = async ({
 }: {
   userId: string | null;
 }) => {
-  return await prisma.todo.findMany({
-    where: { userId: userId as string },
+  if (!userId) {
+    return []; // Return an empty array if userId is null
+  }
+
+  const data = await prisma.todo.findMany({
+    where: { userId },
     orderBy: { createdAt: "desc" },
   });
+
+  return data;
 };
 
 export const deleteTodoActions = async (id: string | undefined) => {
