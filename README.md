@@ -1,36 +1,30 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# To-Do App
 
-## Getting Started
+This To-Do application is built using **Next.js**, **TypeScript**, and **Prisma**, offering a complete solution for managing tasks with full **CRUD** (Create, Read, Update, Delete) operations. The app is designed to be intuitive, efficient, and fully responsive.
 
-First, run the development server:
+## Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- **Create Tasks**: Easily add new tasks with a title and description.
+- **View Tasks**: Browse through all your tasks in a clean, user-friendly interface.
+- **Edit Tasks**: Update task details to keep your to-do list organized.
+- **Delete Tasks**: Remove tasks that are no longer needed.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Tech Stack
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Next.js**: A React framework that enables server-side rendering and static site generation for fast and SEO-friendly applications.
+- **TypeScript**: Provides type safety and helps with debugging during development.
+- **Prisma**: A modern database toolkit to manage and query the database.
+- **Tailwind CSS**: A utility-first CSS framework to quickly build custom designs.
+- **React Hook Form**: Simplifies form handling and validation.
+- **Radix UI**: Accessible and customizable UI components like checkboxes, dialogs, and dropdown menus.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Development Dependencies
 
-## Learn More
+- **Prisma**: Used for database schema migration and querying.
+- **ESLint**: Ensures code quality and consistency throughout the project.
+- **Tailwind CSS**: Used for building the UI with utility classes.
+- **TypeScript**: Adds type safety to the project.
+- **PostCSS**: For CSS transformations and optimizations.
 
-To learn more about Next.js, take a look at the following resources:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
